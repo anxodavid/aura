@@ -1,0 +1,17 @@
+// server/src/server.js
+const express = require('express');
+const cors = require('cors');
+const analyzeRoute = require('./routes/analyze');
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+app.use('/api/analyze', analyzeRoute);
+
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+  console.log(`Motor de Fricción Cognitiva escuchando en el puerto ${PORT}`);
+});

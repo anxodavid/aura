@@ -1,0 +1,178 @@
+/* client/src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap');
+
+:root {
+  --bg-color: #0b0f19;
+  --surface-color: rgba(30, 41, 59, 0.6);
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --primary-accent: #8b5cf6;
+  --primary-accent-hover: #7c3aed;
+  
+  --score-poor: #ef4444; /* 0-39 */
+  --score-flat: #f97316; /* 40-59 */
+  --score-ok: #eab308;   /* 60-79 */
+  --score-good: #10b981; /* 80-100 */
+
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: radial-gradient(circle at top right, rgba(139, 92, 246, 0.15), transparent 40%),
+                    radial-gradient(circle at bottom left, rgba(79, 70, 229, 0.1), transparent 40%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, .score-value {
+  font-family: var(--font-display);
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-sans);
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-accent), #6366f1);
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.39);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  border: 1px solid var(--surface-border);
+  padding: 10px 20px;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Glassmorphism panel base */
+.glass-panel {
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.2); 
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1); 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.2); 
+}
+
+/* Layout */
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100vh;
+}
+
+.main-layout {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+  min-height: 0; /* Important for scrollable areas inside flex */
+}
+
+.left-panel {
+  flex: 0 0 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.right-panel {
+  flex: 0 0 calc(40% - 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* Highlights */
+.highlight-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-weight: 600;
+  margin: 0 2px;
+}
+.highlight-residuo { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.5); }
+.highlight-cliche { background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.5); }
+.highlight-estructura { background: rgba(139, 92, 246, 0.2); color: #c4b5fd; border: 1px solid rgba(139, 92, 246, 0.5); }
+.highlight-em_dash { background: #ef4444; color: #fff; border: 2px solid #fff; font-weight: 800; font-size: 1.1em; padding: 2px 10px; border-radius: 6px; box-shadow: 0 0 10px rgba(239,68,68,0.8); }
+.highlight-link { background: rgba(59, 130, 246, 0.25); color: #93c5fd; border: 2px dashed #60a5fa; text-decoration: underline; padding: 2px 8px; border-radius: 4px; box-shadow: 0 0 8px rgba(59,130,246,0.6); }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .main-layout {
+    flex-direction: column;
+  }
+  .left-panel, .right-panel {
+    flex: none;
+    width: 100%;
+  }
+  .app-container {
+    height: auto;
+  }
+}
