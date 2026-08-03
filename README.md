@@ -1,5 +1,9 @@
 # AURA
 
+[![CI](https://github.com/anxodavid/aura/actions/workflows/ci.yml/badge.svg)](https://github.com/anxodavid/aura/actions/workflows/ci.yml)
+[![Licencia Apache 2.0](https://img.shields.io/badge/licencia-Apache--2.0-blue.svg)](LICENSE)
+[![Demo](https://img.shields.io/badge/demo-anxodavid.github.io%2Faura-black.svg)](https://anxodavid.github.io/aura/)
+
 Analizador de Uso, Ritmo y Artificios. Pegas un texto y te dice cuánto se parece a lo que escribe un modelo de lenguaje cuando nadie lo revisa después.
 
 No emite un veredicto de "esto es IA". Devuelve una puntuación de 0 a 100 y el desglose de por qué: qué rasgo concreto la ha bajado y en qué parte del texto está.
