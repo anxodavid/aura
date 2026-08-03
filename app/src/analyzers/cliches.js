@@ -1,4 +1,4 @@
-// client/src/analyzers/cliches.js
+// app/src/analyzers/cliches.js
 export function analyzeCliches(text, cliches = []) {
   if (!Array.isArray(cliches) || cliches.length === 0) {
     return { count: 0, status: 'ok', impact: 0, detail: 'Sin clichés configurados', matches: [] };

@@ -34,7 +34,7 @@ Puedes comprobarlo de tres maneras, de menos a más trabajo:
 
 1. Abre la pestaña de red del navegador, pulsa Analizar y mira que no aparece nada.
 2. Desconéctate de internet y vuelve a analizar. Funciona igual.
-3. Lee el código. El motor son seis funciones puras en [client/src/analyzers/](client/src/analyzers/) y no hay ni un `fetch` en la ruta del análisis.
+3. Lee el código. El motor son seis funciones puras en [app/src/analyzers/](app/src/analyzers/) y no hay ni un `fetch` en la ruta del análisis.
 
 La tercera es la que cuenta. Las otras dos las verificas en diez segundos.
 
@@ -49,14 +49,14 @@ Hubo un backend. El motor vivía en un servidor Express y el navegador le mandab
 Requiere Node.js.
 
 ```
-cd client
+cd app
 npm install
 npm run dev
 ```
 
-Para generar la versión publicable, `npm run build` desde `client/`. Deja en `client/dist/` un sitio estático que se sube tal cual a cualquier servidor de ficheros.
+Para generar la versión publicable, `npm run build` desde `app/`. Deja en `app/dist/` un sitio estático que se sube tal cual a cualquier servidor de ficheros.
 
-Para pasar los tests, `npm test` desde `client/`.
+Para pasar los tests, `npm test` desde `app/`.
 
 ## Cómo se hizo
 

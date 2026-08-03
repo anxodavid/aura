@@ -1,4 +1,4 @@
-// client/src/analyzers/burstiness.js
+// app/src/analyzers/burstiness.js
 export function calculateBurstiness(text) {
   // Split on '.', '?', '!' followed by whitespace or end of string
   const sentences = text

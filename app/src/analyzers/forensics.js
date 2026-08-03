@@ -1,4 +1,4 @@
-// client/src/analyzers/forensics.js
+// app/src/analyzers/forensics.js
 export function analyzeForensics(text) {
   const rules = [
     { type: 'invisible_chars', regex: /[\u200B\u00A0\uFEFF]/g },

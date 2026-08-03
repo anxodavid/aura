@@ -1,4 +1,4 @@
-// client/src/analyzers/analyze.js
+// app/src/analyzers/analyze.js
 // Orquestador del análisis. Puerto exacto de la lógica que vivía en
 // server/src/routes/analyze.js, ahora síncrono y sin red: se ejecuta entero
 // en el navegador y el texto nunca sale de la pestaña.

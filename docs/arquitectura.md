@@ -14,17 +14,17 @@ La aplicación no tiene backend. Es un sitio estático: todo el análisis se eje
 - **CSS Modular (Glassmorphism)**: Diseño dinámico basado en gradientes responsivos.
 - **Almacenamiento Local (localStorage)**: Persiste únicamente el diccionario de clichés personalizados. El texto analizado no se guarda.
 
-### 2.1 Motor de análisis (`client/src/analyzers/`)
+### 2.1 Motor de análisis (`app/src/analyzers/`)
 
 Seis funciones puras de texto a objeto, sin estado ni efectos: `burstiness.js`, `specificity.js`, `forensics.js`, `structure.js`, `cliches.js` y `score.js`. Las orquesta `analyze.js`, que expone una única función síncrona `analyze(text, cliches)` y devuelve `{ score, label, kpis, highlights, meta }`.
 
-`client/src/utils/api.js` conserva el nombre y la firma que tenía cuando había red (`analyzeText(text, cliches)`, `async`) para no obligar a cambiar a los componentes, pero por dentro es una llamada directa a `analyze()`.
+`app/src/utils/api.js` conserva el nombre y la firma que tenía cuando había red (`analyzeText(text, cliches)`, `async`) para no obligar a cambiar a los componentes, pero por dentro es una llamada directa a `analyze()`.
 
 ### 2.2 Garantía de que no hay red
 
-Originalmente el motor vivía en un servidor Express (`server/`) al que el cliente llamaba por `fetch`. Al migrarlo al navegador se capturó primero la respuesta JSON completa del backend para seis textos que cubren los casos límite (`tests/golden/`), y el motor portado debe reproducirla **byte a byte**. `tests/verify-golden.mjs` comprueba esa igualdad y, además, ejecuta los seis análisis con `fetch`, `XMLHttpRequest`, `WebSocket`, `EventSource` y `navigator` saboteados para que cualquier intento de usar la red haga fallar el test. Se ejecuta con `npm test` desde `client/`.
+Originalmente el motor vivía en un servidor Express (`server/`) al que el cliente llamaba por `fetch`. Al migrarlo al navegador se capturó primero la respuesta JSON completa del backend para seis textos que cubren los casos límite (`tests/golden/`), y el motor portado debe reproducirla **byte a byte**. `tests/verify-golden.mjs` comprueba esa igualdad y, además, ejecuta los seis análisis con `fetch`, `XMLHttpRequest`, `WebSocket`, `EventSource` y `navigator` saboteados para que cualquier intento de usar la red haga fallar el test. Se ejecuta con `npm test` desde `app/`.
 
-Las tipografías (Inter y Outfit) van autoalojadas en `client/src/assets/fonts/` en vez de pedirse a Google Fonts, de modo que el sitio compilado no contiene ninguna URL externa y la carga de la página tampoco filtra la IP del visitante a terceros.
+Las tipografías (Inter y Outfit) van autoalojadas en `app/src/assets/fonts/` en vez de pedirse a Google Fonts, de modo que el sitio compilado no contiene ninguna URL externa y la carga de la página tampoco filtra la IP del visitante a terceros.
 
 ## 3. Funcionamiento de los 5 KPIs
 
