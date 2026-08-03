@@ -37,3 +37,8 @@ CLAUDE.md
 
 # Media de trabajo (no se publica)
 alma_txt.mp4
+
+# Envoltorios locales de Windows: dos comandos que el README ya documenta.
+# Se quedan en disco de quien los quiera, pero no se publican ni se mantienen.
+iniciar.bat
+instalar.bat
