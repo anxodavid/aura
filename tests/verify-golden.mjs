@@ -3,11 +3,11 @@
 // Express y exige que la salida sea idéntica byte a byte a la capturada en golden/.
 // Cualquier diferencia es un bug de la migración, no una mejora.
 //
-//   node tests/verify-golden.mjs        (o: npm test, desde client/)
+//   node tests/verify-golden.mjs        (o: npm test, desde app/)
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { analyze } from '../client/src/analyzers/analyze.js';
+import { analyze } from '../app/src/analyzers/analyze.js';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const GOLDEN = path.join(HERE, 'golden');

@@ -1,4 +1,4 @@
-// client/src/analyzers/structure.js
+// app/src/analyzers/structure.js
 export function analyzeStructure(text) {
   const openings = [
     'en el panorama actual',

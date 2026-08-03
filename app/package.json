@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "app",
   "private": true,
   "version": "0.0.0",
   "license": "Apache-2.0",
@@ -9,8 +9,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "node ../tests/verify-golden.mjs",
-    "lint": "cd .. && eslint --config client/eslint.config.mjs client tests",
-    "lint:fix": "cd .. && eslint --config client/eslint.config.mjs client tests --fix",
+    "lint": "cd .. && eslint --config app/eslint.config.mjs app tests",
+    "lint:fix": "cd .. && eslint --config app/eslint.config.mjs app tests --fix",
     "format": "cd .. && prettier --write .",
     "format:check": "cd .. && prettier --check ."
   },

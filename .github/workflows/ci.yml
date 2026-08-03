@@ -25,28 +25,28 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: client/package-lock.json
+          cache-dependency-path: app/package-lock.json
 
       - name: Instalar dependencias
-        working-directory: client
+        working-directory: app
         run: npm ci
 
       # El test de golden es lo que garantiza que el motor sigue puntuando igual
       # y que el análisis no hace ni una petición de red.
       - name: Tests
-        working-directory: client
+        working-directory: app
         run: npm test
 
       - name: Lint
-        working-directory: client
+        working-directory: app
         run: npm run lint
 
       - name: Formato
-        working-directory: client
+        working-directory: app
         run: npm run format:check
 
       # Compilar en CI detecta lo que el lint no ve: importaciones que no resuelven,
       # activos que faltan, configuración de Vite rota.
       - name: Build
-        working-directory: client
+        working-directory: app
         run: npm run build

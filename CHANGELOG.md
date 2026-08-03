@@ -14,7 +14,7 @@ El análisis pasa a ejecutarse íntegramente en el navegador y desaparece el bac
 
 ### Añadido
 
-- Los cinco analizadores y el cálculo de puntuación corren en el cliente, en `client/src/analyzers/`, portados de CommonJS a ESM.
+- Los cinco analizadores y el cálculo de puntuación corren en el cliente, en `app/src/analyzers/`, portados de CommonJS a ESM.
 - `analyze(text, cliches)`: función síncrona y pura que orquesta el análisis y devuelve `{ score, label, kpis, highlights, meta }`. Reemplaza a la ruta Express.
 - Tipografías Inter y Outfit autoalojadas en el repositorio. El `@import` a Google Fonts era la última petición saliente del sitio; ahora el build no contiene ni una sola URL externa y cargar la página no filtra la IP del visitante a terceros.
 - Aviso de privacidad visible en la interfaz, sin desplegar nada: el análisis ocurre en tu navegador, el texto no se envía a ningún servidor y no se guarda en ninguna parte.
@@ -26,6 +26,7 @@ El análisis pasa a ejecutarse íntegramente en el navegador y desaparece el bac
 
 ### Cambiado
 
+- El directorio `client/` pasa a llamarse `app/`. Sin backend del que distinguirse, "client" describía una arquitectura que ya no existe, y además obligaba a que la configuración de las herramientas viviera dentro de él. Afecta a rutas de workflows, configuración de ESLint y Prettier, Dependabot y documentación; no afecta a la `base` de Vite, que es una ruta de URL y no de directorio.
 - `utils/api.js` mantiene el nombre y la firma que exportaba cuando había red (`analyzeText(text, cliches)`, `async`), pero por dentro llama a `analyze()` directamente. Ningún componente cambió.
 - Las dos validaciones que el backend devolvía como HTTP 400 ahora lanzan `Error` con el mismo mensaje: "Texto inválido o ausente" y "El texto está vacío".
 

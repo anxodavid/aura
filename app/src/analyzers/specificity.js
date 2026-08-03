@@ -1,4 +1,4 @@
-// client/src/analyzers/specificity.js
+// app/src/analyzers/specificity.js
 import nlp from 'compromise';
 
 export function calculateSpecificity(text) {

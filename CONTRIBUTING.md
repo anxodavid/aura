@@ -2,10 +2,10 @@
 
 ## Levantar el entorno
 
-Requiere Node.js 20 o superior. Todo se ejecuta desde `client/`.
+Requiere Node.js 20 o superior. Todo se ejecuta desde `app/`.
 
 ```
-cd client
+cd app
 npm install
 npm run dev
 ```

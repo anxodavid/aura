@@ -1,4 +1,4 @@
-// client/src/analyzers/score.js
+// app/src/analyzers/score.js
 export function calculateTotalScore(kpis) {
   let score = 100;
 

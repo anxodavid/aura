@@ -5,7 +5,7 @@ import prettier from 'eslint-config-prettier';
 
 export default [
   {
-    ignores: ['**/node_modules/**', 'client/dist/**', 'tests/golden/**'],
+    ignores: ['**/node_modules/**', 'app/dist/**', 'tests/golden/**'],
   },
 
   js.configs.recommended,
@@ -19,7 +19,7 @@ export default [
 
   // La aplicación: Preact con JSX, ESM, corriendo en el navegador.
   {
-    files: ['client/src/**/*.{js,jsx}'],
+    files: ['app/src/**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 2024,
       sourceType: 'module',
@@ -39,7 +39,7 @@ export default [
   // y luego lo sobrescribe en las ramas: no-useless-assignment lo señala, pero
   // reescribirlo sería refactorizar el motor, que es justo lo que no se hace aquí.
   {
-    files: ['client/src/analyzers/**/*.js'],
+    files: ['app/src/analyzers/**/*.js'],
     rules: {
       'no-useless-assignment': 'off',
     },
@@ -47,7 +47,7 @@ export default [
 
   // Configuración de Vite: ESM sobre Node.
   {
-    files: ['client/*.js', 'client/*.mjs', 'client/eslint.config.mjs'],
+    files: ['app/*.js', 'app/*.mjs', 'app/eslint.config.mjs'],
     languageOptions: {
       ecmaVersion: 2024,
       sourceType: 'module',

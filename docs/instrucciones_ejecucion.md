@@ -2,7 +2,7 @@
 
 AURA (Analizador de Uso, Ritmo y Artificios) es una aplicación de navegador: no hay servidor ni motor de análisis aparte. Todo ocurre dentro de la pestaña.
 
-Requiere Node.js 20 o superior. Todos los comandos se ejecutan desde la carpeta `client/`.
+Requiere Node.js 20 o superior. Todos los comandos se ejecutan desde la carpeta `app/`.
 
 ## 1. Instalar dependencias
 
@@ -36,8 +36,8 @@ Si un golden falla, el motor ha cambiado de comportamiento. Eso es un fallo hast
 npm run build
 ```
 
-Deja en `client/dist/` un sitio estático que se puede subir tal cual a GitHub Pages o a cualquier servidor de ficheros. `dist/` no se commitea nunca: lo produce el workflow de despliegue.
+Deja en `app/dist/` un sitio estático que se puede subir tal cual a GitHub Pages o a cualquier servidor de ficheros. `dist/` no se commitea nunca: lo produce el workflow de despliegue.
 
-Está configurado para servirse desde el subcamino `/aura/` (`base` en `client/vite.config.js`), que es donde GitHub Pages sirve las project pages. Si lo publicas en otra ruta, cambia ese valor o los activos darán 404 y la página cargará en blanco.
+Está configurado para servirse desde el subcamino `/aura/` (`base` en `app/vite.config.js`), que es donde GitHub Pages sirve las project pages. Si lo publicas en otra ruta, cambia ese valor o los activos darán 404 y la página cargará en blanco.
 
 Para inspeccionar el resultado del build en local, `npm run preview`.
