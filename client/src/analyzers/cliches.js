@@ -6,7 +6,6 @@ export function analyzeCliches(text, cliches = []) {
 
   let count = 0;
   let matches = [];
-  const lowerText = text.toLowerCase();
 
   for (const cliche of cliches) {
     const cLower = cliche.toLowerCase().trim();

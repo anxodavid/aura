@@ -1,0 +1,12 @@
+node_modules/
+client/dist/
+
+# Respuestas de referencia del backend original: se comparan byte a byte con la
+# salida del analizador. Reformatearlas rompería el test de aceptación.
+tests/golden/
+
+package-lock.json
+LICENSE
+*.woff2
+*.png
+*.mp4
