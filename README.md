@@ -58,8 +58,10 @@ Para pasar los tests, `npm test` desde `client/`.
 
 ## Cómo se hizo
 
-Escrito con [Claude Code](https://claude.com/claude-code), incluida la migración que eliminó el backend. Los tests de referencia se capturaron antes de tocar el motor, precisamente para que la migración se pudiera comprobar en vez de creer.
+La migración que eliminó el backend se hizo con los tests de referencia capturados antes de tocar el motor, precisamente para que se pudiera comprobar en vez de creer.
 
-## Licencia
+## Autoría y licencia
 
-ISC.
+Construida por Anxo Feijóo en el Product Discovery Lab de ECOMT, con [Claude Code](https://claude.com/claude-code).
+
+Apache-2.0. © 2026 ECOMT. Puedes usarla, modificarla y redistribuirla; la licencia obliga a conservar la atribución y a declarar los cambios que hagas.
