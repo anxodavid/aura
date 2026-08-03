@@ -50,8 +50,6 @@ npm install
 npm run dev
 ```
 
-En Windows hay dos scripts equivalentes en la raíz, `instalar.bat` e `iniciar.bat`, para no tocar la consola.
-
 Para generar la versión publicable, `npm run build` desde `client/`. Deja en `client/dist/` un sitio estático que se sube tal cual a cualquier servidor de ficheros.
 
 Para pasar los tests, `npm test` desde `client/`.
