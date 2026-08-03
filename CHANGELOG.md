@@ -32,7 +32,7 @@ El análisis pasa a ejecutarse íntegramente en el navegador y desaparece el bac
 
 ### Sin cambios
 
-- **Ni un umbral, ni una penalización, ni un algoritmo.** El diff de los seis analizadores contra su versión de servidor es exclusivamente sintáctico: cabecera de comentario, `export`, `import` y espacios en blanco al final de líneas vacías. Verificado con los golden.
+- **Ni un umbral, ni una penalización, ni un algoritmo.** El diff de los seis analizadores contra su versión de servidor es exclusivamente sintáctico: cabecera de comentario, `export`, `import`, el formato que impone Prettier (comillas, comas finales, saltos de línea) y una variable muerta ya en el original (`lowerText` en `cliches.js`, asignada y nunca leída). Que los golden sigan idénticos byte a byte es la prueba de que nada de eso cambió el comportamiento.
 
 ### Corregido
 
