@@ -21,7 +21,7 @@ export function App() {
         setCliches(JSON.parse(stored));
       }
     } catch (e) {
-      console.error("No se pudieron cargar los clichés");
+      console.error('No se pudieron cargar los clichés');
     }
   }, []);
 
@@ -42,7 +42,7 @@ export function App() {
       const data = await analyzeText(trimmed, cliches);
       setResult(data);
     } catch (err) {
-      setError(err.message || "Error al analizar el texto.");
+      setError(err.message || 'Error al analizar el texto.');
     } finally {
       setIsAnalyzing(false);
     }
@@ -59,7 +59,14 @@ export function App() {
     <div className="app-container">
       <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
-          <h1 style={{ background: 'linear-gradient(to right, var(--text-primary), var(--text-secondary))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', margin: 0 }}>
+          <h1
+            style={{
+              background: 'linear-gradient(to right, var(--text-primary), var(--text-secondary))',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              margin: 0,
+            }}
+          >
             AURA
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginTop: '4px' }}>
@@ -77,32 +84,40 @@ export function App() {
       </p>
 
       {error && (
-        <div style={{ background: 'rgba(239,68,68,0.2)', border: '1px solid rgba(239,68,68,0.5)', padding: '12px', borderRadius: '8px', color: '#fca5a5' }}>
+        <div
+          style={{
+            background: 'rgba(239,68,68,0.2)',
+            border: '1px solid rgba(239,68,68,0.5)',
+            padding: '12px',
+            borderRadius: '8px',
+            color: '#fca5a5',
+          }}
+        >
           {error}
         </div>
       )}
 
       <main className="main-layout animate-fade-in">
         <div className="left-panel">
-          <TextInputPanel 
-            text={text} 
-            setText={setText} 
-            onAnalyze={handleAnalyze} 
-            onClear={handleClear} 
-            isAnalyzing={isAnalyzing} 
+          <TextInputPanel
+            text={text}
+            setText={setText}
+            onAnalyze={handleAnalyze}
+            onClear={handleClear}
+            isAnalyzing={isAnalyzing}
           />
         </div>
-        
+
         <div className="right-panel">
           <Dashboard result={result} isAnalyzing={isAnalyzing} text={analyzedText} />
         </div>
       </main>
 
       {showSettings && (
-        <SettingsModal 
-          cliches={cliches} 
-          onSave={handleSaveCliches} 
-          onClose={() => setShowSettings(false)} 
+        <SettingsModal
+          cliches={cliches}
+          onSave={handleSaveCliches}
+          onClose={() => setShowSettings(false)}
         />
       )}
     </div>

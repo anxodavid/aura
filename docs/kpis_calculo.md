@@ -3,6 +3,7 @@
 AURA (Analizador de Uso, Ritmo y Artificios) evalúa el texto basándose en cinco métricas clave (KPIs), aplicando penalizaciones sobre una puntuación base inicial de 100 puntos. A continuación, se detalla el método de cálculo de cada uno de estos KPIs.
 
 ## 1. Entropía Rítmica (Burstiness)
+
 Evalúa la variación en la longitud de las oraciones para determinar si el ritmo de escritura es mecánico o natural.
 
 - **Cómo se calcula:**
@@ -16,6 +17,7 @@ Evalúa la variación en la longitud de las oraciones para determinar si el ritm
   - Desviación estándar > 8 o muestra temporal insuficiente: Alta variación o ritmo natural (**0 puntos**)
 
 ## 2. Densidad de Especificidad
+
 Mide la proporción de entidades, cifras y anclajes reales versus texto genérico y abstracto.
 
 - **Cómo se calcula:**
@@ -28,6 +30,7 @@ Mide la proporción de entidades, cifras y anclajes reales versus texto genéric
   - Densidad > 6%: Densidad neutra/alta (**0 puntos**)
 
 ## 3. Análisis Forense de Residuos
+
 Escanea el texto buscando patrones indicativos de un "copy-paste" descuidado desde herramientas de Inteligencia Artificial que generan o procesan texto.
 
 - **Cómo se calcula:**
@@ -36,23 +39,25 @@ Escanea el texto buscando patrones indicativos de un "copy-paste" descuidado des
     - Marcadores residuales de UI como "ChatGPT dice:", "Claude ha dicho:".
     - Marcado Markdown residual como negritas sueltas o enlaces formados como `[texto](url)` en vez de HTML limpio.
     - Plantillas vacías sin rellenar (`[Insertar X]`, `[Nombre]`).
-    - Abuso intensivo de guiones largos (*em-dash*).
+    - Abuso intensivo de guiones largos (_em-dash_).
 - **Impacto en el Índice:**
   - Si se encuentra por lo menos un residuo: **-30 puntos**.
   - Si el texto está totalmente limpio de estos marcadores: **0 puntos**.
 
 ## 4. Arquitectura Predictiva (Structure)
+
 Comprueba si el texto recurre excesivamente a aperturas y cierres basados en clichés compositivos, haciéndolo predecible.
 
 - **Cómo se calcula:**
   - Extrae los primeros dos párrafos para considerarlos "apertura" y los últimos dos como "cierre".
-  - Compara estos fragmentos buscando apariciones de frases plantilla (ej. introducciones como *"en el paradigma actual"*, *"es crucial entender"* y cierres como *"en conclusión"*, *"al final del día"*).
+  - Compara estos fragmentos buscando apariciones de frases plantilla (ej. introducciones como _"en el paradigma actual"_, _"es crucial entender"_ y cierres como _"en conclusión"_, _"al final del día"_).
 - **Impacto en el Índice:**
   - Si se detecta un patrón predecible tanto en apertura como cierre: **-20 puntos**
   - Si se detecta un patrón predecible en un solo bloque (solo inicio o solo cierre): **-10 puntos**
   - Sin patrones predecibles detectables (o texto muy corto): **0 puntos**
 
 ## 5. Contador de Clichés
+
 Verifica la presencia de jerga, tópicos corporativos o frases que el usuario ha solicitado penalizar explícitamente desde su panel de configuración de clichés.
 
 - **Cómo se calcula:**
@@ -62,9 +67,10 @@ Verifica la presencia de jerga, tópicos corporativos o frases que el usuario ha
   - Este KPI tiene un nivel máximo de penalización de **-15 puntos** en total para no desvirtuar el resto del análisis. (Si no se ha detectado nada: 0 puntos).
 
 ## 6. Índice Final de Fricción
+
 La puntuación global indica desde un punto de vista holístico la naturalidad y fricción que genera el texto en comparación con un contenido genérico y automatizado al uso.
 
-- **Construcción del Índice:** 
+- **Construcción del Índice:**
   1. Parte de una base perfecta de **100**.
   2. Resta las penalizaciones obtenidas de los 5 KPIs evaluados.
   3. **Penalización Sinérgica:** Si el texto es plano (Burstiness con penalización) **Y A LA VEZ** abstracto (Especificidad con penalización grave), se aplica una severa **penalización adicional de -15 puntos**. Combinar estos dos atributos es un indicativo claro de contenido vacío y carente de interés humano.

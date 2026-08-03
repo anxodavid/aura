@@ -15,38 +15,44 @@ export function calculateSpecificity(text) {
   const numbers = text.match(/\b\d+([.,]\d+)?%?\b/g) || [];
   const years = text.match(/\b(19|20)\d{2}\b/g) || [];
 
-  const specificWordsCount = people.length + places.length + organizations.length + acronyms.length + numbers.length + years.length;
+  const specificWordsCount =
+    people.length +
+    places.length +
+    organizations.length +
+    acronyms.length +
+    numbers.length +
+    years.length;
 
-  const words = text.split(/\s+/).filter(w => w.trim().length > 0);
+  const words = text.split(/\s+/).filter((w) => w.trim().length > 0);
   const totalWords = words.length;
 
   if (totalWords === 0) {
-    return { value: 0, status: "ok", impact: 0, detail: "Texto vacío" };
+    return { value: 0, status: 'ok', impact: 0, detail: 'Texto vacío' };
   }
 
   const density = (specificWordsCount / totalWords) * 100;
 
-  let status = "ok";
+  let status = 'ok';
   let impact = 0;
-  let detail = "Texto anclado en datos concretos reales";
+  let detail = 'Texto anclado en datos concretos reales';
 
   if (density < 3) {
-    status = "fail";
+    status = 'fail';
     impact = -20;
-    detail = "Baja presencia de entidades, cifras o anclajes concretos (Slop abstracto y vacío)";
+    detail = 'Baja presencia de entidades, cifras o anclajes concretos (Slop abstracto y vacío)';
   } else if (density >= 3 && density <= 6) {
-    status = "risk";
+    status = 'risk';
     impact = -10;
-    detail = "Densidad media-baja de elementos específicos";
+    detail = 'Densidad media-baja de elementos específicos';
   } else {
-    status = "ok";
-    detail = "Densidad neutra/alta de elementos específicos";
+    status = 'ok';
+    detail = 'Densidad neutra/alta de elementos específicos';
   }
 
   return {
     value: Number(density.toFixed(2)),
     status,
     impact,
-    detail
+    detail,
   };
 }

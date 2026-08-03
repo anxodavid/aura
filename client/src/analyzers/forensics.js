@@ -6,7 +6,7 @@ export function analyzeForensics(text) {
     { type: 'orphan_markdown', regex: /\*\*[^*]+\*\*/g },
     { type: 'markdown_link', regex: /\[[^\]]+\]\(https?:\/\/[^)]+\)/gi },
     { type: 'empty_template', regex: /\[(Insertar|Añadir)[^\]]+\]/gi },
-    { type: 'em_dash', regex: /[\u2013\u2014]/g }
+    { type: 'em_dash', regex: /[\u2013\u2014]/g },
   ];
 
   let matches = [];
@@ -19,7 +19,7 @@ export function analyzeForensics(text) {
       matches.push({
         type: rule.type,
         text: match[0],
-        index: match.index
+        index: match.index,
       });
       // prevent infinite loops if regex matched empty string
       if (match.index === rule.regex.lastIndex) {
@@ -31,18 +31,18 @@ export function analyzeForensics(text) {
   if (matches.length > 0) {
     return {
       value: true,
-      status: "fail",
+      status: 'fail',
       impact: -30,
-      detail: "Se detectaron residuos forenses incompatibles con un copy limpio",
-      matches
+      detail: 'Se detectaron residuos forenses incompatibles con un copy limpio',
+      matches,
     };
   }
 
   return {
     value: false,
-    status: "ok",
+    status: 'ok',
     impact: 0,
-    detail: "Sin residuos forenses evidentes",
-    matches: []
+    detail: 'Sin residuos forenses evidentes',
+    matches: [],
   };
 }
