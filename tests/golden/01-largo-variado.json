@@ -1,0 +1,44 @@
+{
+  "score": 100,
+  "label": "Alta fricción",
+  "kpis": {
+    "burstiness": {
+      "value": 13.63,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Alta fricción (ritmo de variación muy alta)"
+    },
+    "specificity": {
+      "value": 11.39,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Densidad neutra/alta de elementos específicos"
+    },
+    "forensics": {
+      "value": false,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Sin residuos forenses evidentes",
+      "matches": []
+    },
+    "structure": {
+      "value": false,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Estructura no predecible"
+    },
+    "cliches": {
+      "count": 0,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Sin clichés configurados",
+      "matches": []
+    }
+  },
+  "highlights": [],
+  "meta": {
+    "wordCount": 158,
+    "sentenceCount": 5,
+    "paragraphCount": 5
+  }
+}

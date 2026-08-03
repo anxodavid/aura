@@ -1,0 +1,44 @@
+{
+  "score": 45,
+  "label": "Riesgo de texto plano",
+  "kpis": {
+    "burstiness": {
+      "value": 1.18,
+      "status": "fail",
+      "impact": -20,
+      "detail": "Variación baja entre longitudes de oración (ritmo plano)"
+    },
+    "specificity": {
+      "value": 0,
+      "status": "fail",
+      "impact": -20,
+      "detail": "Baja presencia de entidades, cifras o anclajes concretos (Slop abstracto y vacío)"
+    },
+    "forensics": {
+      "value": false,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Sin residuos forenses evidentes",
+      "matches": []
+    },
+    "structure": {
+      "value": false,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Estructura no predecible"
+    },
+    "cliches": {
+      "count": 0,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Sin clichés configurados",
+      "matches": []
+    }
+  },
+  "highlights": [],
+  "meta": {
+    "wordCount": 102,
+    "sentenceCount": 7,
+    "paragraphCount": 7
+  }
+}

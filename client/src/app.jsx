@@ -34,7 +34,7 @@ export function App() {
   const handleAnalyze = async () => {
     const trimmed = text.trim();
     if (!trimmed) return;
-    setText(trimmed); // Force UI text to match backend exactly to prevent highlight index shifts
+    setText(trimmed); // Force UI text to match the analyzer exactly to prevent highlight index shifts
     setAnalyzedText(trimmed);
     setIsAnalyzing(true);
     setError(null);
@@ -42,7 +42,7 @@ export function App() {
       const data = await analyzeText(trimmed, cliches);
       setResult(data);
     } catch (err) {
-      setError(err.message || "Error al conectar con el servidor.");
+      setError(err.message || "Error al analizar el texto.");
     } finally {
       setIsAnalyzing(false);
     }
@@ -70,6 +70,11 @@ export function App() {
           ⚙️ Configuración
         </button>
       </header>
+
+      <p className="privacy-note">
+        El análisis se ejecuta en tu navegador. El texto no se envía a ningún servidor y no se
+        guarda en ninguna parte.
+      </p>
 
       {error && (
         <div style={{ background: 'rgba(239,68,68,0.2)', border: '1px solid rgba(239,68,68,0.5)', padding: '12px', borderRadius: '8px', color: '#fca5a5' }}>

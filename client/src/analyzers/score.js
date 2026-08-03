@@ -1,9 +1,9 @@
-// server/src/analyzers/score.js
-function calculateTotalScore(kpis) {
+// client/src/analyzers/score.js
+export function calculateTotalScore(kpis) {
   let score = 100;
 
   if (kpis.forensics.status === 'fail' || kpis.forensics.status === 'risk') {
-    score += kpis.forensics.impact; 
+    score += kpis.forensics.impact;
   }
   if (kpis.burstiness.status === 'fail' || kpis.burstiness.status === 'risk') {
     score += kpis.burstiness.impact;
@@ -14,7 +14,7 @@ function calculateTotalScore(kpis) {
   if (kpis.structure.status === 'fail' || kpis.structure.status === 'risk') {
     score += kpis.structure.impact;
   }
-  
+
   score += kpis.cliches.impact;
 
   // Synergistic Penalty: if text is both abstract (specificity fail) AND monotone (burstiness fail/risk)
@@ -32,5 +32,3 @@ function calculateTotalScore(kpis) {
 
   return { score, label };
 }
-
-module.exports = { calculateTotalScore };

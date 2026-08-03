@@ -1,5 +1,5 @@
-// server/src/analyzers/cliches.js
-function analyzeCliches(text, cliches = []) {
+// client/src/analyzers/cliches.js
+export function analyzeCliches(text, cliches = []) {
   if (!Array.isArray(cliches) || cliches.length === 0) {
     return { count: 0, status: "ok", impact: 0, detail: "Sin clichés configurados", matches: [] };
   }
@@ -14,7 +14,7 @@ function analyzeCliches(text, cliches = []) {
 
     const escaped = cLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const regex = new RegExp(escaped, 'gi');
-    
+
     let match;
     while ((match = regex.exec(text)) !== null) {
       count++;
@@ -26,7 +26,7 @@ function analyzeCliches(text, cliches = []) {
   }
 
   let penaltyApplied = Math.max(count * -5, -15);
-  
+
   if (count > 0) {
     return {
       count,
@@ -45,5 +45,3 @@ function analyzeCliches(text, cliches = []) {
     matches: []
   };
 }
-
-module.exports = { analyzeCliches };

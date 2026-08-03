@@ -1,22 +1,22 @@
-// server/src/analyzers/specificity.js
-const nlp = require('compromise');
+// client/src/analyzers/specificity.js
+import nlp from 'compromise';
 
-function calculateSpecificity(text) {
+export function calculateSpecificity(text) {
   const doc = nlp(text);
-  
+
   // Filter to avoid lowercase Spanish stop-words being treated as places/orgs
   const isCap = (s) => /^[A-ZÁÉÍÓÚÑ]/.test(s.trim());
-  
+
   const people = doc.people().out('array').filter(isCap);
   const places = doc.places().out('array').filter(isCap);
   const organizations = doc.organizations().out('array').filter(isCap);
-  
+
   const acronyms = text.match(/\b[A-ZÁÉÍÓÚÑ]{2,}\b/g) || [];
   const numbers = text.match(/\b\d+([.,]\d+)?%?\b/g) || [];
   const years = text.match(/\b(19|20)\d{2}\b/g) || [];
 
   const specificWordsCount = people.length + places.length + organizations.length + acronyms.length + numbers.length + years.length;
-  
+
   const words = text.split(/\s+/).filter(w => w.trim().length > 0);
   const totalWords = words.length;
 
@@ -50,5 +50,3 @@ function calculateSpecificity(text) {
     detail
   };
 }
-
-module.exports = { calculateSpecificity };

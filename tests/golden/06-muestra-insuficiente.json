@@ -1,0 +1,44 @@
+{
+  "score": 80,
+  "label": "Alta fricción",
+  "kpis": {
+    "burstiness": {
+      "value": null,
+      "status": "insufficient",
+      "impact": 0,
+      "detail": "Muestra insuficiente (menos de 3 oraciones válidas)"
+    },
+    "specificity": {
+      "value": 0,
+      "status": "fail",
+      "impact": -20,
+      "detail": "Baja presencia de entidades, cifras o anclajes concretos (Slop abstracto y vacío)"
+    },
+    "forensics": {
+      "value": false,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Sin residuos forenses evidentes",
+      "matches": []
+    },
+    "structure": {
+      "value": false,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Estructura indetectable (muestra corta)"
+    },
+    "cliches": {
+      "count": 0,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Sin clichés configurados",
+      "matches": []
+    }
+  },
+  "highlights": [],
+  "meta": {
+    "wordCount": 10,
+    "sentenceCount": 2,
+    "paragraphCount": 1
+  }
+}

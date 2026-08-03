@@ -3,12 +3,7 @@ echo ==========================================
 echo Instalando AURA (Analizador de Uso, Ritmo y Artificios)
 echo ==========================================
 
-echo [1/2] Instalando dependencias del motor (servidor)...
-cd server
-call npm install
-cd ..
-
-echo [2/2] Instalando dependencias de la interfaz (cliente)...
+echo Instalando dependencias de la aplicacion...
 cd client
 call npm install
 cd ..

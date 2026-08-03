@@ -1,0 +1,43 @@
+[
+  {
+    "name": "01-largo-variado",
+    "descripcion": "Texto largo, concreto y de ritmo variado: debe puntuar alto",
+    "cliches": [],
+    "text": "El 14 de marzo de 2019 la planta de Vigo produjo 4.200 unidades y fallaron 37 de ellas en el control final.\nMarta Ruiz, responsable de calidad en Stellantis desde 2016, revisó los registros del PLC uno por uno durante nueve horas seguidas y encontró que el sensor de par de la línea 3 llevaba desviado 0,4 Nm desde el turno de noche del 11 de marzo, un desfase que ningún operario había reportado porque la tolerancia del panel seguía marcando verde.\nNadie lo vio.\nEl informe que envió a dirección tenía 3 páginas y una tabla de 28 filas, y en la última columna aparecía el coste real: 61.400 euros en chatarra que ya no se podía recuperar de ninguna manera.\nLa norma ISO 9001 obliga a documentar la desviación en 48 horas, así que lo hizo esa misma tarde desde el despacho de Ourense, con el turno de tarde todavía trabajando al otro lado del cristal."
+  },
+  {
+    "name": "02-plano-generico",
+    "descripcion": "Texto plano y abstracto: debe disparar burstiness y specificity",
+    "cliches": [],
+    "text": "la transformación de las organizaciones requiere un enfoque global y decidido por parte de todos.\nlos equipos deben trabajar de forma alineada para conseguir los objetivos que se han marcado.\nla comunicación interna resulta esencial para que el mensaje llegue de manera clara y directa.\nlas personas son el activo más valioso de cualquier organización que quiera seguir creciendo.\nel liderazgo debe adaptarse a las nuevas necesidades que van surgiendo en el entorno laboral.\nla formación continua permite que los profesionales mantengan sus capacidades bastante actualizadas.\nel cambio cultural se construye poco a poco con el compromiso sostenido de toda la plantilla."
+  },
+  {
+    "name": "03-forensics",
+    "descripcion": "Em dashes, enlaces markdown, caracteres invisibles y otros residuos forenses",
+    "cliches": [],
+    "text": "ChatGPT dice: aquí tienes el borrador que me has pedido para la campaña de otoño.\nLa propuesta — desarrollada tras varias iteraciones — combina dos ejes de trabajo complementarios entre sí.\nPuedes consultar la documentación completa en [la guía oficial](https://ejemplo.com/guia) antes de la reunión del jueves.\nEl segundo eje – pendiente de validar – depende del **presupuesto aprobado** por el comité de dirección.\nFirmado: [Insertar nombre del responsable] con\u00A0fecha de hoy y\u200B referencia interna pendiente.\uFEFF"
+  },
+  {
+    "name": "04-cliches-diccionario",
+    "descripcion": "Texto con clichés del diccionario personalizado (cliches no vacío)",
+    "cliches": [
+      "sinergia",
+      "poner en valor",
+      "hoja de ruta",
+      "ecosistema"
+    ],
+    "text": "La sinergia entre los dos departamentos permitió cerrar el proyecto antes de lo previsto por todos.\nDurante la presentación se decidió poner en valor el trabajo que había hecho el equipo de soporte durante el verano.\nLa hoja de ruta se revisó en septiembre y volvió a revisarse en noviembre sin cambios de fondo relevantes.\nToda la propuesta encaja dentro del ecosistema que la compañía lleva construyendo desde hace bastante tiempo.\nLa sinergia vuelve a aparecer en el resumen ejecutivo, esta vez sin ninguna cifra que la respalde."
+  },
+  {
+    "name": "05-hamburguesa",
+    "descripcion": "Estructura de plantilla: apertura genérica y cierre genérico",
+    "cliches": [],
+    "text": "En el actual paradigma de la comunicación corporativa, las empresas se enfrentan a retos que no existían antes.\n\nLos canales se han multiplicado y la atención de las audiencias se ha vuelto un recurso escaso y disputado.\n\nCada organización debe encontrar su propio equilibrio entre la frecuencia de publicación y la calidad del mensaje.\n\nEn conclusión, el éxito depende de la capacidad de adaptación y de la coherencia sostenida en el tiempo."
+  },
+  {
+    "name": "06-muestra-insuficiente",
+    "descripcion": "Menos de tres oraciones válidas: muestra insuficiente",
+    "cliches": [],
+    "text": "El informe llegó tarde y sin firmar. Nadie lo revisó."
+  }
+]
