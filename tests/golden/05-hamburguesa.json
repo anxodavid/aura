@@ -1,0 +1,44 @@
+{
+  "score": 25,
+  "label": "Muy predecible / artificial",
+  "kpis": {
+    "burstiness": {
+      "value": 0.71,
+      "status": "fail",
+      "impact": -20,
+      "detail": "Variación baja entre longitudes de oración (ritmo plano)"
+    },
+    "specificity": {
+      "value": 0,
+      "status": "fail",
+      "impact": -20,
+      "detail": "Baja presencia de entidades, cifras o anclajes concretos (Slop abstracto y vacío)"
+    },
+    "forensics": {
+      "value": false,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Sin residuos forenses evidentes",
+      "matches": []
+    },
+    "structure": {
+      "value": true,
+      "status": "fail",
+      "impact": -20,
+      "detail": "Se detectó fuertemente un patrón de apertura y cierre genéricos"
+    },
+    "cliches": {
+      "count": 0,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Sin clichés configurados",
+      "matches": []
+    }
+  },
+  "highlights": [],
+  "meta": {
+    "wordCount": 72,
+    "sentenceCount": 4,
+    "paragraphCount": 4
+  }
+}

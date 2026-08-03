@@ -2,12 +2,9 @@
 echo ==========================================
 echo Iniciando AURA
 echo ==========================================
-
-echo Iniciando motor de analisis (servidor)...
-start "Motor de Analisis" /MIN cmd /c "cd server && node src/server.js"
-
-echo Iniciando interfaz grafica (cliente)...
-cd client
 echo.
-echo Presiona Ctrl+C en esta ventana para detener el servidor de interfaz.
+echo El analisis se ejecuta entero en el navegador. No hay servidor de analisis.
+echo Presiona Ctrl+C en esta ventana para detener el servidor de desarrollo.
+echo.
+cd client
 call npm run dev -- --open

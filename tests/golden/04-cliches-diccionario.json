@@ -1,0 +1,96 @@
+{
+  "score": 30,
+  "label": "Muy predecible / artificial",
+  "kpis": {
+    "burstiness": {
+      "value": 1.62,
+      "status": "fail",
+      "impact": -20,
+      "detail": "Variación baja entre longitudes de oración (ritmo plano)"
+    },
+    "specificity": {
+      "value": 0,
+      "status": "fail",
+      "impact": -20,
+      "detail": "Baja presencia de entidades, cifras o anclajes concretos (Slop abstracto y vacío)"
+    },
+    "forensics": {
+      "value": false,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Sin residuos forenses evidentes",
+      "matches": []
+    },
+    "structure": {
+      "value": false,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Estructura no predecible"
+    },
+    "cliches": {
+      "count": 5,
+      "status": "fail",
+      "impact": -15,
+      "detail": "Se detectaron 5 clichés del diccionario personal",
+      "matches": [
+        {
+          "text": "sinergia",
+          "index": 3
+        },
+        {
+          "text": "sinergia",
+          "index": 437
+        },
+        {
+          "text": "poner en valor",
+          "index": 135
+        },
+        {
+          "text": "hoja de ruta",
+          "index": 220
+        },
+        {
+          "text": "ecosistema",
+          "index": 360
+        }
+      ]
+    }
+  },
+  "highlights": [
+    {
+      "type": "cliche",
+      "start": 3,
+      "end": 11,
+      "text": "sinergia"
+    },
+    {
+      "type": "cliche",
+      "start": 437,
+      "end": 445,
+      "text": "sinergia"
+    },
+    {
+      "type": "cliche",
+      "start": 135,
+      "end": 149,
+      "text": "poner en valor"
+    },
+    {
+      "type": "cliche",
+      "start": 220,
+      "end": 232,
+      "text": "hoja de ruta"
+    },
+    {
+      "type": "cliche",
+      "start": 360,
+      "end": 370,
+      "text": "ecosistema"
+    }
+  ],
+  "meta": {
+    "wordCount": 88,
+    "sentenceCount": 5,
+    "paragraphCount": 5
+  }
+}

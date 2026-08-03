@@ -1,0 +1,156 @@
+{
+  "score": 15,
+  "label": "Muy predecible / artificial",
+  "kpis": {
+    "burstiness": {
+      "value": 0.8,
+      "status": "fail",
+      "impact": -20,
+      "detail": "Variación baja entre longitudes de oración (ritmo plano)"
+    },
+    "specificity": {
+      "value": 0,
+      "status": "fail",
+      "impact": -20,
+      "detail": "Baja presencia de entidades, cifras o anclajes concretos (Slop abstracto y vacío)"
+    },
+    "forensics": {
+      "value": true,
+      "status": "fail",
+      "impact": -30,
+      "detail": "Se detectaron residuos forenses incompatibles con un copy limpio",
+      "matches": [
+        {
+          "type": "invisible_chars",
+          "text": " ",
+          "index": 463
+        },
+        {
+          "type": "invisible_chars",
+          "text": "​",
+          "index": 478
+        },
+        {
+          "type": "ui_marker",
+          "text": "ChatGPT dice",
+          "index": 0
+        },
+        {
+          "type": "orphan_markdown",
+          "text": "**presupuesto aprobado**",
+          "index": 364
+        },
+        {
+          "type": "markdown_link",
+          "text": "[la guía oficial](https://ejemplo.com/guia)",
+          "index": 236
+        },
+        {
+          "type": "empty_template",
+          "text": "[Insertar nombre del responsable]",
+          "index": 426
+        },
+        {
+          "type": "em_dash",
+          "text": "—",
+          "index": 95
+        },
+        {
+          "type": "em_dash",
+          "text": "—",
+          "index": 134
+        },
+        {
+          "type": "em_dash",
+          "text": "–",
+          "index": 327
+        },
+        {
+          "type": "em_dash",
+          "text": "–",
+          "index": 350
+        }
+      ]
+    },
+    "structure": {
+      "value": false,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Estructura no predecible"
+    },
+    "cliches": {
+      "count": 0,
+      "status": "ok",
+      "impact": 0,
+      "detail": "Sin clichés configurados",
+      "matches": []
+    }
+  },
+  "highlights": [
+    {
+      "type": "residuo",
+      "start": 463,
+      "end": 464,
+      "text": " "
+    },
+    {
+      "type": "residuo",
+      "start": 478,
+      "end": 479,
+      "text": "​"
+    },
+    {
+      "type": "residuo",
+      "start": 0,
+      "end": 12,
+      "text": "ChatGPT dice"
+    },
+    {
+      "type": "residuo",
+      "start": 364,
+      "end": 388,
+      "text": "**presupuesto aprobado**"
+    },
+    {
+      "type": "link",
+      "start": 236,
+      "end": 279,
+      "text": "[la guía oficial](https://ejemplo.com/guia)"
+    },
+    {
+      "type": "residuo",
+      "start": 426,
+      "end": 459,
+      "text": "[Insertar nombre del responsable]"
+    },
+    {
+      "type": "em_dash",
+      "start": 95,
+      "end": 96,
+      "text": "—"
+    },
+    {
+      "type": "em_dash",
+      "start": 134,
+      "end": 135,
+      "text": "—"
+    },
+    {
+      "type": "em_dash",
+      "start": 327,
+      "end": 328,
+      "text": "–"
+    },
+    {
+      "type": "em_dash",
+      "start": 350,
+      "end": 351,
+      "text": "–"
+    }
+  ],
+  "meta": {
+    "wordCount": 72,
+    "sentenceCount": 5,
+    "paragraphCount": 5
+  }
+}

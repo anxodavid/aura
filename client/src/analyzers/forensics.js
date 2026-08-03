@@ -1,5 +1,5 @@
-// server/src/analyzers/forensics.js
-function analyzeForensics(text) {
+// client/src/analyzers/forensics.js
+export function analyzeForensics(text) {
   const rules = [
     { type: 'invisible_chars', regex: /[\u200B\u00A0\uFEFF]/g },
     { type: 'ui_marker', regex: /(ChatGPT|Gemini|Claude)\s*(dice|ha dicho|:)/gi },
@@ -46,5 +46,3 @@ function analyzeForensics(text) {
     matches: []
   };
 }
-
-module.exports = { analyzeForensics };

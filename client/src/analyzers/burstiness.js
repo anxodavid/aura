@@ -1,8 +1,8 @@
-// server/src/analyzers/burstiness.js
-function calculateBurstiness(text) {
+// client/src/analyzers/burstiness.js
+export function calculateBurstiness(text) {
   // Split on '.', '?', '!' followed by whitespace or end of string
   const sentences = text.split(/[.?!]+(?=\s|$)/).map(s => s.trim()).filter(s => s.length > 0);
-  
+
   const lengths = sentences.map(s => {
     return s.split(/\s+/).filter(w => w.match(/[a-zA-Z0-9áéíóúñÁÉÍÓÚÑ]/)).length;
   }).filter(l => l >= 10); // Ignore headers and very short fragments that artificially inflate variance
@@ -45,5 +45,3 @@ function calculateBurstiness(text) {
     detail
   };
 }
-
-module.exports = { calculateBurstiness };

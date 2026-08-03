@@ -1,5 +1,5 @@
-// server/src/analyzers/structure.js
-function analyzeStructure(text) {
+// client/src/analyzers/structure.js
+export function analyzeStructure(text) {
   const openings = [
     "en el panorama actual",
     "en el actual paradigma",
@@ -9,7 +9,7 @@ function analyzeStructure(text) {
     "en la era digital",
     "hoy en día"
   ];
-  
+
   const closings = [
     "en conclusión",
     "en resumen",
@@ -20,7 +20,7 @@ function analyzeStructure(text) {
   ];
 
   const paragraphs = text.split(/\n+/).map(p => p.trim()).filter(p => p.length > 0);
-  
+
   if (paragraphs.length < 2) {
     return { value: false, status: "ok", impact: 0, detail: "Estructura indetectable (muestra corta)" };
   }
@@ -54,5 +54,3 @@ function analyzeStructure(text) {
     detail: "Estructura no predecible"
   };
 }
-
-module.exports = { analyzeStructure };

@@ -1,0 +1,11 @@
+# Los golden de tests/ se comparan byte a byte con la salida del analizador, que
+# genera siempre LF. Sin esto, un clon en Windows (core.autocrlf=true) los recibe
+# con CRLF y el test de aceptación falla sin que nada esté roto.
+* text=auto eol=lf
+
+# Los .bat los ejecuta cmd.exe, que quiere CRLF.
+*.bat text eol=crlf
+
+*.woff2 binary
+*.png binary
+*.mp4 binary
