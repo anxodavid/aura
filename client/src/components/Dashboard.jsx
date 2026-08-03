@@ -4,9 +4,22 @@ import HighlightedText from './HighlightedText';
 export default function Dashboard({ result, isAnalyzing, text }) {
   if (isAnalyzing) {
     return (
-      <div className="glass-panel animate-fade-in" style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div
+        className="glass-panel animate-fade-in"
+        style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+      >
         <div style={{ textAlign: 'center' }}>
-          <div style={{ width: '40px', height: '40px', border: '3px solid var(--surface-border)', borderTopColor: 'var(--primary-accent)', borderRadius: '50%', animation: 'spin 1s linear infinite', margin: '0 auto 16px' }}></div>
+          <div
+            style={{
+              width: '40px',
+              height: '40px',
+              border: '3px solid var(--surface-border)',
+              borderTopColor: 'var(--primary-accent)',
+              borderRadius: '50%',
+              animation: 'spin 1s linear infinite',
+              margin: '0 auto 16px',
+            }}
+          ></div>
           <p style={{ color: 'var(--text-secondary)' }}>Procesando patrones...</p>
         </div>
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
@@ -16,7 +29,16 @@ export default function Dashboard({ result, isAnalyzing, text }) {
 
   if (!result) {
     return (
-      <div className="glass-panel animate-fade-in" style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-secondary)' }}>
+      <div
+        className="glass-panel animate-fade-in"
+        style={{
+          height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: 'var(--text-secondary)',
+        }}
+      >
         <p>Aún no hay datos. Pega un texto y haz clic en analizar.</p>
       </div>
     );
@@ -31,9 +53,17 @@ export default function Dashboard({ result, isAnalyzing, text }) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-      <div className="glass-panel animate-fade-in" style={{ textAlign: 'center', padding: '32px 24px' }}>
-        <h2 style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>Índice de Fricción</h2>
-        <div className="score-value" style={{ fontSize: '4rem', fontWeight: '700', color: scoreColor, lineHeight: '1' }}>
+      <div
+        className="glass-panel animate-fade-in"
+        style={{ textAlign: 'center', padding: '32px 24px' }}
+      >
+        <h2 style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+          Índice de Fricción
+        </h2>
+        <div
+          className="score-value"
+          style={{ fontSize: '4rem', fontWeight: '700', color: scoreColor, lineHeight: '1' }}
+        >
           {score}
         </div>
         <div style={{ marginTop: '8px', fontSize: '1.1rem', fontWeight: '500', color: scoreColor }}>
@@ -54,7 +84,9 @@ export default function Dashboard({ result, isAnalyzing, text }) {
         {highlights && highlights.length > 0 ? (
           <HighlightedText text={text} highlights={highlights} />
         ) : (
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>No se detectaron clichés ni caracteres especiales destacados.</p>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+            No se detectaron clichés ni caracteres especiales destacados.
+          </p>
         )}
       </div>
     </div>

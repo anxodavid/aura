@@ -1,10 +1,13 @@
 export default function TextInputPanel({ text, setText, onAnalyze, onClear, isAnalyzing }) {
-  const wordCount = text.split(/\s+/).filter(w => w.length > 0).length;
-  const sentenceCount = text.split(/[.?!]+(?=\s|$)/).filter(s => s.trim().length > 0).length;
-  const paragraphCount = text.split(/\n+/).filter(p => p.trim().length > 0).length;
+  const wordCount = text.split(/\s+/).filter((w) => w.length > 0).length;
+  const sentenceCount = text.split(/[.?!]+(?=\s|$)/).filter((s) => s.trim().length > 0).length;
+  const paragraphCount = text.split(/\n+/).filter((p) => p.trim().length > 0).length;
 
   return (
-    <div className="glass-panel" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+    <div
+      className="glass-panel"
+      style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
+    >
       <h3 style={{ marginBottom: '16px' }}>Texto a Analizar</h3>
       <textarea
         value={text}
@@ -22,20 +25,35 @@ export default function TextInputPanel({ text, setText, onAnalyze, onClear, isAn
           fontSize: '1rem',
           resize: 'none',
           outline: 'none',
-          marginBottom: '16px'
+          marginBottom: '16px',
         }}
       />
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', display: 'flex', gap: '16px' }}>
+        <div
+          style={{
+            fontSize: '0.85rem',
+            color: 'var(--text-secondary)',
+            display: 'flex',
+            gap: '16px',
+          }}
+        >
           <span>{wordCount} palabras</span>
           <span>{sentenceCount} oraciones</span>
           <span>{paragraphCount} párrafos</span>
         </div>
         <div style={{ display: 'flex', gap: '12px' }}>
-          <button className="btn-secondary" onClick={onClear} disabled={isAnalyzing || text.length === 0}>
+          <button
+            className="btn-secondary"
+            onClick={onClear}
+            disabled={isAnalyzing || text.length === 0}
+          >
             Limpiar
           </button>
-          <button className="btn-primary" onClick={onAnalyze} disabled={isAnalyzing || text.length === 0}>
+          <button
+            className="btn-primary"
+            onClick={onAnalyze}
+            disabled={isAnalyzing || text.length === 0}
+          >
             {isAnalyzing ? 'Analizando...' : 'Analizar densidad'}
           </button>
         </div>

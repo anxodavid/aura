@@ -1,7 +1,7 @@
 // client/src/analyzers/cliches.js
 export function analyzeCliches(text, cliches = []) {
   if (!Array.isArray(cliches) || cliches.length === 0) {
-    return { count: 0, status: "ok", impact: 0, detail: "Sin clichés configurados", matches: [] };
+    return { count: 0, status: 'ok', impact: 0, detail: 'Sin clichés configurados', matches: [] };
   }
 
   let count = 0;
@@ -19,7 +19,7 @@ export function analyzeCliches(text, cliches = []) {
       count++;
       matches.push({
         text: match[0],
-        index: match.index
+        index: match.index,
       });
     }
   }
@@ -29,18 +29,18 @@ export function analyzeCliches(text, cliches = []) {
   if (count > 0) {
     return {
       count,
-      status: "fail",
+      status: 'fail',
       impact: penaltyApplied,
       detail: `Se detectaron ${count} clichés del diccionario personal`,
-      matches
+      matches,
     };
   }
 
   return {
     count: 0,
-    status: "ok",
+    status: 'ok',
     impact: 0,
-    detail: "No se encontraron clichés",
-    matches: []
+    detail: 'No se encontraron clichés',
+    matches: [],
   };
 }

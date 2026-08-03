@@ -21,7 +21,7 @@ La última versión publicada en `main`, que es la que sirve GitHub Pages. No ha
 
 ## Cómo reportar
 
-Usa el aviso privado de seguridad de GitHub: en la pestaña **Security** del repositorio, *Report a vulnerability*. Así queda entre nosotros hasta que haya arreglo.
+Usa el aviso privado de seguridad de GitHub: en la pestaña **Security** del repositorio, _Report a vulnerability_. Así queda entre nosotros hasta que haya arreglo.
 
 Si prefieres correo, `afeijoo@ecomt.net`.
 

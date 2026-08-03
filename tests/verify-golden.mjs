@@ -57,14 +57,23 @@ for (const { arg, mensaje } of errorCases) {
     console.log(`  ok   error ${JSON.stringify(arg)} -> "${mensaje}"`);
   } else {
     failed++;
-    console.log(`  FAIL error ${JSON.stringify(arg)}: se esperaba "${mensaje}", se obtuvo ${thrown}`);
+    console.log(
+      `  FAIL error ${JSON.stringify(arg)}: se esperaba "${mensaje}", se obtuvo ${thrown}`
+    );
   }
 }
 
 // El análisis no puede hacer ni una sola petición de red. En vez de comprobarlo a ojo
 // en la pestaña del navegador, se sabotean todas las APIs de red y se exige que el
 // análisis siga dando exactamente el mismo resultado.
-const apisDeRed = ['fetch', 'XMLHttpRequest', 'WebSocket', 'EventSource', 'sendBeacon', 'navigator'];
+const apisDeRed = [
+  'fetch',
+  'XMLHttpRequest',
+  'WebSocket',
+  'EventSource',
+  'sendBeacon',
+  'navigator',
+];
 const originales = {};
 for (const api of apisDeRed) {
   originales[api] = globalThis[api];
@@ -89,10 +98,17 @@ try {
   console.log(`  FAIL sin red: ${e.message}`);
 } finally {
   for (const api of apisDeRed) {
-    Object.defineProperty(globalThis, api, { configurable: true, writable: true, value: originales[api] });
+    Object.defineProperty(globalThis, api, {
+      configurable: true,
+      writable: true,
+      value: originales[api],
+    });
   }
 }
-if (redOk) console.log(`  ok   sin red: ${cases.length} análisis con fetch/XHR/WebSocket/EventSource/navigator saboteados`);
+if (redOk)
+  console.log(
+    `  ok   sin red: ${cases.length} análisis con fetch/XHR/WebSocket/EventSource/navigator saboteados`
+  );
 
 console.log(
   failed === 0

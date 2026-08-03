@@ -4,7 +4,7 @@ export default function HighlightedText({ text, highlights }) {
   }
 
   const sorted = [...highlights].sort((a, b) => a.start - b.start);
-  
+
   const parts = [];
   let currentIndex = 0;
 
@@ -14,13 +14,13 @@ export default function HighlightedText({ text, highlights }) {
     if (hl.start > currentIndex) {
       parts.push({
         text: text.substring(currentIndex, hl.start),
-        type: 'normal'
+        type: 'normal',
       });
     }
 
     parts.push({
       text: text.substring(hl.start, hl.end),
-      type: hl.type
+      type: hl.type,
     });
 
     currentIndex = hl.end;
@@ -29,15 +29,26 @@ export default function HighlightedText({ text, highlights }) {
   if (currentIndex < text.length) {
     parts.push({
       text: text.substring(currentIndex),
-      type: 'normal'
+      type: 'normal',
     });
   }
 
   return (
-    <div style={{ fontSize: '0.9rem', color: 'var(--text-primary)', whiteSpace: 'pre-wrap', lineHeight: '1.6', background: 'rgba(0,0,0,0.2)', padding: '16px', borderRadius: '8px', border: '1px solid var(--surface-border)' }}>
+    <div
+      style={{
+        fontSize: '0.9rem',
+        color: 'var(--text-primary)',
+        whiteSpace: 'pre-wrap',
+        lineHeight: '1.6',
+        background: 'rgba(0,0,0,0.2)',
+        padding: '16px',
+        borderRadius: '8px',
+        border: '1px solid var(--surface-border)',
+      }}
+    >
       {parts.map((part, i) => {
         if (part.type === 'normal') return <span key={i}>{part.text}</span>;
-        
+
         let badgeClass = 'highlight-badge ';
         if (part.type === 'residuo') badgeClass += 'highlight-residuo';
         else if (part.type === 'cliche') badgeClass += 'highlight-cliche';
