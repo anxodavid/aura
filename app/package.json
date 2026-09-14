@@ -15,7 +15,7 @@
     "format:check": "cd .. && prettier --check ."
   },
   "dependencies": {
-    "compromise": "^14.15.0",
+    "compromise": "^14.17.0",
     "preact": "^10.27.2"
   },
   "devDependencies": {
