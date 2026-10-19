@@ -1,0 +1,18 @@
+anonimizadas = "Anxo, 2026-10-19"
+
+[[imagen]]
+fichero = "01-indice.webp"
+pie = "Un texto pegado y su índice de fricción de 0 a 100: dice si se puede firmar tal cual o hay que reescribirlo."
+
+[[imagen]]
+fichero = "02-desglose.webp"
+pie = "Desglose por indicador, con lo que resta cada uno: dice qué arreglar primero."
+
+[[imagen]]
+fichero = "03-hallazgos.webp"
+pie = "Los hallazgos marcados en el propio texto, clichés y restos de copiar y pegar: señalan la frase exacta que hay que tocar."
+
+[[imagen]]
+fichero = "04-cliches.webp"
+pie = "El diccionario de clichés propio, guardado en el navegador: decide qué muletillas penalizan a quien escribe."
+
