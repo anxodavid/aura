@@ -7,20 +7,20 @@ Estado: **borrador, pendiente de aprobación de Cowork.**
 
 ## Lo comprobado para escribirla
 
-| Qué | Resultado |
-|---|---|
-| Rama | `main` en `9a5b8de` (= `origin/main`), árbol limpio antes de empezar |
-| Dónde vive | `origin` = `github.com/anxodavid/aura`, repo público en la cuenta personal de GitHub, **no en el grupo `lab` de `git.ecomt.net`**. Licencia Apache-2.0, © 2026 ECOMT (`LICENSE`, README) |
-| `revisado_en` | `CHANGELOG.md` en `main`: primer release `## [1.0.0] - 2026-08-03`, con la forma de `versionado.md §1` |
-| `pdl` | No consta: ni en el repo, ni en `andel/catalogo/apps/aura.toml`, ni en la bóveda (`Proyectos\AURA.md`, `Proyectos\AURA\`) |
-| Qué es | Sitio estático Preact + Vite. El análisis corre en el navegador; no hay servidor (CHANGELOG 1.0.0, README) |
-| Contra qué datos corre | Ninguno: solo el texto que pega quien lo usa. Sin base de datos, sin OTEA, sin red. `tests/verify-golden.mjs` sabotea `fetch`, `XMLHttpRequest`, `WebSocket`, `EventSource` y `navigator` y falla si el motor los usa |
-| Despliegue | GitHub Pages, automático en cada push a `main` (`.github/workflows/deploy.yml`), bloqueado si fallan los golden. Público: `anxodavid.github.io/aura/` (README, toml de Andel). Bóveda: verificado en vivo el 3-ago-2026 sin tráfico saliente. No lo he vuelto a comprobar (sin peticiones HTTP) |
-| Uso | Bóveda, «Medir el uso»: no hay ni habrá dato de uso; añadir analítica rompería el test y la promesa de privacidad |
-| Límites | Bóveda, «Decisiones / notas»: «no mide calidad ni detecta "alma"». «Cierre del 3-ago»: no caza la construcción «no por X, sino por Y». «Mejoras»: falso negativo de la estructura prefabricada en textos cortos; el diccionario no se puede exportar |
-| Idioma | Supuesto: la detección de nombres propios usa `compromise`, librería de PLN pensada para inglés; en castellano puede reconocer peor. No comprobado con textos; no lo llevo a la ficha |
-| `problema` de Andel | «Textos genéricos que hacen perder el tiempo, y textos propios que no se deberían firmar.» Cuadra con «Objetivo» de la bóveda. Se mantiene en el apartado 1. El toml no tiene `no_hace` |
-| Autorización | Bóveda, 3-ago-2026: Anxo, como director del PDL, decide que es producto del lab, propiedad de ECOMT, y autoriza publicarlo |
+| Qué                    | Resultado                                                                                                                                                                                                                                                                                       |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Rama                   | `main` en `9a5b8de` (= `origin/main`), árbol limpio antes de empezar                                                                                                                                                                                                                            |
+| Dónde vive             | `origin` = `github.com/anxodavid/aura`, repo público en la cuenta personal de GitHub, **no en el grupo `lab` de `git.ecomt.net`**. Licencia Apache-2.0, © 2026 ECOMT (`LICENSE`, README)                                                                                                        |
+| `revisado_en`          | `CHANGELOG.md` en `main`: primer release `## [1.0.0] - 2026-08-03`, con la forma de `versionado.md §1`                                                                                                                                                                                          |
+| `pdl`                  | No consta: ni en el repo, ni en `andel/catalogo/apps/aura.toml`, ni en la bóveda (`Proyectos\AURA.md`, `Proyectos\AURA\`)                                                                                                                                                                       |
+| Qué es                 | Sitio estático Preact + Vite. El análisis corre en el navegador; no hay servidor (CHANGELOG 1.0.0, README)                                                                                                                                                                                      |
+| Contra qué datos corre | Ninguno: solo el texto que pega quien lo usa. Sin base de datos, sin OTEA, sin red. `tests/verify-golden.mjs` sabotea `fetch`, `XMLHttpRequest`, `WebSocket`, `EventSource` y `navigator` y falla si el motor los usa                                                                           |
+| Despliegue             | GitHub Pages, automático en cada push a `main` (`.github/workflows/deploy.yml`), bloqueado si fallan los golden. Público: `anxodavid.github.io/aura/` (README, toml de Andel). Bóveda: verificado en vivo el 3-ago-2026 sin tráfico saliente. No lo he vuelto a comprobar (sin peticiones HTTP) |
+| Uso                    | Bóveda, «Medir el uso»: no hay ni habrá dato de uso; añadir analítica rompería el test y la promesa de privacidad                                                                                                                                                                               |
+| Límites                | Bóveda, «Decisiones / notas»: «no mide calidad ni detecta "alma"». «Cierre del 3-ago»: no caza la construcción «no por X, sino por Y». «Mejoras»: falso negativo de la estructura prefabricada en textos cortos; el diccionario no se puede exportar                                            |
+| Idioma                 | Supuesto: la detección de nombres propios usa `compromise`, librería de PLN pensada para inglés; en castellano puede reconocer peor. No comprobado con textos; no lo llevo a la ficha                                                                                                           |
+| `problema` de Andel    | «Textos genéricos que hacen perder el tiempo, y textos propios que no se deberían firmar.» Cuadra con «Objetivo» de la bóveda. Se mantiene en el apartado 1. El toml no tiene `no_hace`                                                                                                         |
+| Autorización           | Bóveda, 3-ago-2026: Anxo, como director del PDL, decide que es producto del lab, propiedad de ECOMT, y autoriza publicarlo                                                                                                                                                                      |
 
 ## Desviaciones respecto al prompt
 
@@ -42,11 +42,11 @@ Estado: **borrador, pendiente de aprobación de Cowork.**
 ---
 producto: AURA
 descriptor: Detección de texto genérico sin que salga del navegador
-pdl: "?"
+pdl: '?'
 madurez: 2
 estado: demo
 modalidad: M1
-audiencia: "?"
+audiencia: '?'
 revisado: 2026-10-13
 revisado_en: 1.0.0
 pendiente:
@@ -137,7 +137,6 @@ estable.
 2. Commit aparte con este plan y su cierre al final.
 3. Sin etiqueta y sin push. Ojo: un push a `main` en este repo publica en GitHub Pages; que lo haga
    Anxo sabiéndolo.
-
 
 ## Qué se ejecutó (13-oct-2026)
 

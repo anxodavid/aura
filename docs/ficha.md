@@ -1,11 +1,11 @@
 ---
 producto: AURA
 descriptor: Detección de texto genérico sin que salga del navegador
-pdl: "?"
+pdl: '?'
 madurez: 2
 estado: demo
 modalidad: M1
-audiencia: "?"
+audiencia: '?'
 revisado: 2026-10-13
 revisado_en: 1.0.0
 pendiente:
