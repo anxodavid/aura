@@ -8,6 +8,7 @@ modalidad: M1
 audiencia: '?'
 revisado: 2026-10-13
 revisado_en: 1.0.0
+revisado_sha: '?'
 pendiente:
   - campo: pdl
     motivo: AURA no tiene identificador PDL asignado en ninguna fuente
@@ -16,8 +17,11 @@ pendiente:
     motivo: la norma no fija qué separa "demo condicionada" de "demo"
     ref: protocolo-madurez.md §2.1
   - campo: audiencia
-    motivo: es pública, y el único valor en uso, "ambos", no lo describe
+    motivo: sin decidir; es pública (GitHub, Apache-2.0)
     ref: ficha-producto.md §2
+  - campo: revisado_sha
+    motivo: ficha anterior a la regla (metodo 0.2.0)
+    ref: ficha-producto.md §6
 ---
 
 ## Qué problema resuelve
