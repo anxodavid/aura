@@ -1,0 +1,1 @@
+cd app && npx lint-staged --cwd .. --config ../.lintstagedrc.json

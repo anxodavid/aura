@@ -12,7 +12,8 @@
     "lint": "cd .. && eslint --config app/eslint.config.mjs app tests",
     "lint:fix": "cd .. && eslint --config app/eslint.config.mjs app tests --fix",
     "format": "cd .. && prettier --write .",
-    "format:check": "cd .. && prettier --check ."
+    "format:check": "cd .. && prettier --check .",
+    "prepare": "cd .. && husky app/.husky"
   },
   "dependencies": {
     "compromise": "^14.15.0",
@@ -25,6 +26,8 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.9.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "prettier": "^3.9.6",
     "vite": "^8.0.0-beta.13"
   },
